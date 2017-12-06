@@ -38,10 +38,6 @@ final class SpinnerController {
         spinner.isUserInteractionEnabled = true
         
         let centerAttachment = UIAttachmentBehavior(item: spinner, attachedToAnchor: spinner.center)
-//        centerAttachment.action = {
-//            [weak self] in
-//            self?.fixSpinnerResistance()
-//        }
         animator.addBehavior(centerAttachment)
     }
     
@@ -58,11 +54,7 @@ final class SpinnerController {
     }
     
     func stop() {
-//        let velocity = behavior.angularVelocity(for: spinner)
-//        let newVelocity = 5 - velocity
-//        behavior.friction = 100
-//        behavior.addAngularVelocity(newVelocity, for: spinner)
-//        animator.removeBehavior(behavior)
+        
     }
     
     var startTouchCenter: CGPoint!
@@ -105,18 +97,4 @@ final class SpinnerController {
             behavior.addAngularVelocity(angularVelocity, for: spinner)
         }
     }
-    
-//    private func fixSpinnerResistance() {
-//        let velocity = behavior.angularVelocity(for: spinner)
-//        if (-5...5 ~= velocity) {
-//            behavior.angularResistance = 0
-//            let targetVelocity: CGFloat = velocity > 0 ? 5.1 : -5.1
-//            let newVelocity = targetVelocity - velocity
-//            behavior.addAngularVelocity(newVelocity, for: spinner)
-//        }
-//        else {
-//            behavior.angularResistance = 1
-//        }
-//    }
-    
 }
