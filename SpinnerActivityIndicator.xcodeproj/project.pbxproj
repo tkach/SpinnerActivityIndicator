@@ -12,6 +12,8 @@
 		B526328B1F4CB9090039AD3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52632891F4CB9090039AD3F /* Main.storyboard */; };
 		B526328D1F4CB9090039AD3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B526328C1F4CB9090039AD3F /* Assets.xcassets */; };
 		B52632901F4CB9090039AD3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B526328E1F4CB9090039AD3F /* LaunchScreen.storyboard */; };
+		B52632981F4CBB720039AD3F /* SpinnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52632971F4CBB720039AD3F /* SpinnerController.swift */; };
+		B5AFD37A1FCF63F500F32CC8 /* SpinnerActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AFD3791FCF63F500F32CC8 /* SpinnerActivityIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,9 @@
 		B526328C1F4CB9090039AD3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B526328F1F4CB9090039AD3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B52632911F4CB9090039AD3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B52632971F4CBB720039AD3F /* SpinnerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerController.swift; sourceTree = "<group>"; };
+		B59F90FC1F4E05DF00C6D7E3 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		B5AFD3791FCF63F500F32CC8 /* SpinnerActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerActivityIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +43,7 @@
 		B52632791F4CB9090039AD3F = {
 			isa = PBXGroup;
 			children = (
+				B5AFD3781FCF63E000F32CC8 /* Pod */,
 				B52632841F4CB9090039AD3F /* SpinnerActivityIndicator */,
 				B52632831F4CB9090039AD3F /* Products */,
 			);
@@ -60,8 +66,18 @@
 				B526328C1F4CB9090039AD3F /* Assets.xcassets */,
 				B526328E1F4CB9090039AD3F /* LaunchScreen.storyboard */,
 				B52632911F4CB9090039AD3F /* Info.plist */,
+				B59F90FC1F4E05DF00C6D7E3 /* MyPlayground.playground */,
 			);
 			path = SpinnerActivityIndicator;
+			sourceTree = "<group>";
+		};
+		B5AFD3781FCF63E000F32CC8 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				B52632971F4CBB720039AD3F /* SpinnerController.swift */,
+				B5AFD3791FCF63F500F32CC8 /* SpinnerActivityIndicator.swift */,
+			);
+			path = Pod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +112,7 @@
 				TargetAttributes = {
 					B52632811F4CB9090039AD3F = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = TA9RQZV3QA;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -137,6 +154,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B52632881F4CB9090039AD3F /* ViewController.swift in Sources */,
+				B52632981F4CBB720039AD3F /* SpinnerController.swift in Sources */,
+				B5AFD37A1FCF63F500F32CC8 /* SpinnerActivityIndicator.swift in Sources */,
 				B52632861F4CB9090039AD3F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,7 +281,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TA9RQZV3QA;
 				INFOPLIST_FILE = SpinnerActivityIndicator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = megogo.SpinnerActivityIndicator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -274,7 +295,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TA9RQZV3QA;
 				INFOPLIST_FILE = SpinnerActivityIndicator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = megogo.SpinnerActivityIndicator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -301,6 +324,7 @@
 				B52632961F4CB9090039AD3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
