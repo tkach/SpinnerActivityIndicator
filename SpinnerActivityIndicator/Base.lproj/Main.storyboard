@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,25 +18,15 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqO-xs-vQr" customClass="SpinnerActivityIndicator" customModule="SpinnerActivityIndicator" customModuleProvider="target">
-                                <rect key="frame" x="111.5" y="41" width="152" height="125"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVs-dD-Fhd">
+                                <rect key="frame" x="131" y="166" width="40" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="125" id="4s9-E4-Zhm"/>
-                                    <constraint firstAttribute="width" constant="152" id="Oc1-VL-QFY"/>
+                                    <constraint firstAttribute="height" constant="30" id="82I-pi-gDt"/>
+                                    <constraint firstAttribute="width" constant="40" id="iFi-Zh-2qU"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" red="1" green="0.46666666865348816" blue="0.13333334028720856" alpha="1" colorSpace="deviceRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVs-dD-Fhd">
-                                <rect key="frame" x="52" y="288" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" red="0.0" green="0.76470588240000004" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -44,18 +34,38 @@
                                     <action selector="startSpinner:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d3Q-ym-Nl1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I05-mv-hVQ">
-                                <rect key="frame" x="179" y="288" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I05-mv-hVQ">
+                                <rect key="frame" x="243" y="166" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="4h1-8P-rDQ"/>
+                                </constraints>
                                 <state key="normal" title="Stop"/>
                                 <connections>
                                     <action selector="stopSpinner:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ged-oc-rnJ"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqO-xs-vQr" customClass="SpinnerActivityIndicator" customModule="SpinnerActivityIndicator" customModuleProvider="target">
+                                <rect key="frame" x="131" y="41" width="152" height="125"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="4s9-E4-Zhm"/>
+                                    <constraint firstAttribute="width" constant="152" id="Oc1-VL-QFY"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.91634774208068848" green="0.54976493120193481" blue="0.77586096525192261" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isAnimating" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="I05-mv-hVQ" firstAttribute="top" secondItem="eqO-xs-vQr" secondAttribute="bottom" id="0Lq-RT-PJs"/>
+                            <constraint firstItem="I05-mv-hVQ" firstAttribute="trailing" secondItem="eqO-xs-vQr" secondAttribute="trailing" id="4OD-f8-8i6"/>
                             <constraint firstItem="eqO-xs-vQr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="21" id="7U2-mn-1s2"/>
+                            <constraint firstItem="CVs-dD-Fhd" firstAttribute="leading" secondItem="eqO-xs-vQr" secondAttribute="leading" id="GjX-Op-KZf"/>
+                            <constraint firstItem="CVs-dD-Fhd" firstAttribute="top" secondItem="eqO-xs-vQr" secondAttribute="bottom" id="Mfl-m8-f4Q"/>
                             <constraint firstItem="eqO-xs-vQr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fra-Oa-ktO"/>
                         </constraints>
                     </view>

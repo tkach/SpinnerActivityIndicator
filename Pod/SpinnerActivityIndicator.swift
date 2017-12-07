@@ -60,7 +60,7 @@ public enum SpinnerStyle {
     }()
     
     private lazy var spinnerController: SpinnerController = {
-        SpinnerController(with: self)
+        SpinnerController(with: self.imageView, referenceView: self)
     }()
     
     private var widthConstraint: NSLayoutConstraint?
@@ -100,16 +100,24 @@ public enum SpinnerStyle {
         UIView.animate(withDuration: 0.3, animations: {
             self.alpha = 0
         }) { _ in
-            self.isUserInteractionEnabled = true
+            self.isUserInteractionEnabled = false
         }
     }
     
     override public func didMoveToSuperview() {
         super.didMoveToSuperview()
-        isAnimating ? startAnimating() : stopAnimating()
+        layoutIfNeeded()
+        if isAnimating {
+            alpha = 0
+            startAnimating()
+        }
+        else {
+            stopAnimating()
+        }
     }
     
     override public func prepareForInterfaceBuilder() {
+        layoutIfNeeded()
         isAnimating ? startAnimating() : stopAnimating()
     }
     

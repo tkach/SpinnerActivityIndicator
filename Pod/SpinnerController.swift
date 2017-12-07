@@ -10,51 +10,39 @@ import UIKit
 
 final class SpinnerController {
     private let spinner: UIView
-    private var behavior: UIDynamicItemBehavior
-    private let panRecognizer: UIGestureRecognizer
-    private lazy var animator: UIDynamicAnimator = {
-        guard let reference = self.spinner.superview else {
-            fatalError("SpinnerController spinner's superview is nil." +
-                "please add spinner to view hierarchy before creating SpinnerController")
-        }
-        return UIDynamicAnimator(referenceView: reference)
-        }()
+    private let referenceView: UIView
+    private let spinnerBehavior: UIDynamicItemBehavior
+    private let animator: UIDynamicAnimator
     
-    
-    init(with spinner: UIView) {
+    init(with spinner: UIView, referenceView: UIView) {
         self.spinner = spinner
-        behavior = UIDynamicItemBehavior(items: [spinner])
-        panRecognizer = UIPanGestureRecognizer()
+        self.referenceView = referenceView
+        spinnerBehavior = UIDynamicItemBehavior(items: [spinner])
+        animator = UIDynamicAnimator(referenceView: self.referenceView)
         setup()
     }
     
     private func setup() {
-        behavior.angularResistance = 0
-        behavior.resistance = 0
-        behavior.friction = 0
+        let panRecognizer = UIPanGestureRecognizer()
         panRecognizer.addTarget(self, action: #selector(handlePan(gesture:)))
-        spinner.addGestureRecognizer(panRecognizer)
-        behavior.addAngularVelocity(5, for: spinner)
-        spinner.isUserInteractionEnabled = true
+        referenceView.addGestureRecognizer(panRecognizer)
         
-        let centerAttachment = UIAttachmentBehavior(item: spinner, attachedToAnchor: spinner.center)
+        let center = referenceView.convert(spinner.center, to: referenceView)
+        let centerAttachment = UIAttachmentBehavior(item: spinner, attachedToAnchor: center)
         animator.addBehavior(centerAttachment)
     }
     
     func start() {
-        if (!animator.behaviors.contains(behavior)) {
-            animator.addBehavior(behavior)
-            behavior.friction = 0
+        if (!animator.behaviors.contains(spinnerBehavior)) {
+            animator.addBehavior(spinnerBehavior)
         }
-        else {
-            let velocity = behavior.angularVelocity(for: spinner)
-            let newVelocity = 5 - velocity
-            behavior.addAngularVelocity(newVelocity, for: spinner)
-        }
+        let velocity = spinnerBehavior.angularVelocity(for: spinner)
+        let newVelocity = 5 - velocity
+        spinnerBehavior.addAngularVelocity(newVelocity, for: spinner)
     }
     
     func stop() {
-        
+        animator.removeBehavior(spinnerBehavior)
     }
     
     var startTouchCenter: CGPoint!
@@ -64,12 +52,11 @@ final class SpinnerController {
     var angularVelocity: CGFloat!
     
     @objc func handlePan(gesture: UIGestureRecognizer) {
-        guard animator.behaviors.contains(behavior) else { return }
+        guard animator.behaviors.contains(spinnerBehavior) else { return }
         
         func angle(of view: UIView) -> CGFloat {
             return atan2(view.transform.b, view.transform.a)
         }
-
         if (gesture.state == .began) {
             startTouchCenter = spinner.center
 
@@ -77,24 +64,25 @@ final class SpinnerController {
             let pointWithinAnimatedView = gesture.location(in: spinner)
             let offset = UIOffsetMake((CGFloat) (pointWithinAnimatedView.x - spinner.bounds.size.width / 2.0),
                                            (CGFloat) (pointWithinAnimatedView.y - spinner.bounds.size.height / 2.0))
-            let anchor = gesture.location(in: spinner.superview)
+            let anchor = gesture.location(in: referenceView)
             attachment = UIAttachmentBehavior(item: spinner, offsetFromCenter: offset, attachedToAnchor: anchor)
         
             lastTime = CFAbsoluteTimeGetCurrent()
             lastAngle = angle(of: spinner)
             attachment?.action = {
                 [unowned self] in
-                let time = CFAbsoluteTimeGetCurrent()
-                let newAngle = angle(of: self.spinner)
-                self.angularVelocity = (newAngle - self.lastAngle) / (CGFloat(time) - CGFloat(self.lastTime))
+                let timeInterval = CGFloat(CFAbsoluteTimeGetCurrent() - self.lastTime)
+                let angularDistance = angle(of: self.spinner) - self.lastAngle
+                self.angularVelocity = angularDistance / timeInterval
             }
             animator.addBehavior(attachment)
         } else if (gesture.state == .changed) {
-            let anchor = gesture.location(in: spinner.superview!)
+            let anchor = gesture.location(in: referenceView)
             attachment.anchorPoint = anchor
         } else if (gesture.state == .ended || gesture.state == .cancelled) {
             animator.removeBehavior(attachment)
-            behavior.addAngularVelocity(angularVelocity, for: spinner)
+            spinnerBehavior.addAngularVelocity(angularVelocity, for: spinner)
         }
     }
+
 }
