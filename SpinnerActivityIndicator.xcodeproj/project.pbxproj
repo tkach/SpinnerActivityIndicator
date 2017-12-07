@@ -44,7 +44,7 @@
 			isa = PBXGroup;
 			children = (
 				B5AFD3781FCF63E000F32CC8 /* Pod */,
-				B52632841F4CB9090039AD3F /* SpinnerActivityIndicator */,
+				B52632841F4CB9090039AD3F /* SpinnerActivityIndicatorExample */,
 				B52632831F4CB9090039AD3F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,7 +57,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B52632841F4CB9090039AD3F /* SpinnerActivityIndicator */ = {
+		B52632841F4CB9090039AD3F /* SpinnerActivityIndicatorExample */ = {
 			isa = PBXGroup;
 			children = (
 				B52632851F4CB9090039AD3F /* AppDelegate.swift */,
@@ -68,7 +68,7 @@
 				B52632911F4CB9090039AD3F /* Info.plist */,
 				B59F90FC1F4E05DF00C6D7E3 /* MyPlayground.playground */,
 			);
-			path = SpinnerActivityIndicator;
+			path = SpinnerActivityIndicatorExample;
 			sourceTree = "<group>";
 		};
 		B5AFD3781FCF63E000F32CC8 /* Pod */ = {
