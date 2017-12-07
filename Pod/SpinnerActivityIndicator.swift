@@ -108,7 +108,12 @@ public enum SpinnerStyle {
         super.didMoveToSuperview()
         layoutIfNeeded()
         if isAnimating {
-            alpha = 0
+            #if TARGET_INTERFACE_BUILDER
+                alpha = 1
+            #else
+                alpha = 0
+            #endif
+            
             startAnimating()
         }
         else {
@@ -119,6 +124,7 @@ public enum SpinnerStyle {
     override public func prepareForInterfaceBuilder() {
         layoutIfNeeded()
         isAnimating ? startAnimating() : stopAnimating()
+        imageView.alpha = isAnimating ? 1 : 0.4
     }
     
     private func commonInit() {
