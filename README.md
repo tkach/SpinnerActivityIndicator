@@ -6,6 +6,7 @@ Your users will be much more entertained when they have an option to spin a spin
 while your app is loading data/ uncompressing database/ mining [you_name_it]coins etc. 
 Easily customizable via Interface Builder.
 
+![Demo](https://user-images.githubusercontent.com/1849482/33743411-62a7f42c-dbb5-11e7-8518-91cc0b3ec91e.gif)
 
 Features
 --
@@ -26,10 +27,6 @@ target 'YourTarget' do
 	pod 'SpinnerActivityIndicator'
 end
 
-```
-* via Carthage
-```ruby
-github "tkach/SpinnerActivityIndicator"
 ```
 * manual
 
