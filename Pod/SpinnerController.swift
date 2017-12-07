@@ -18,6 +18,7 @@ final class SpinnerController {
         self.spinner = spinner
         self.referenceView = referenceView
         spinnerBehavior = UIDynamicItemBehavior(items: [spinner])
+        spinnerBehavior.angularResistance = 0
         animator = UIDynamicAnimator(referenceView: self.referenceView)
         setup()
     }
