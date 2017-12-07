@@ -37,9 +37,16 @@ Copy Pod folder from this repo to your project
 
 Using and customizing
 --
-//TODO: fill this chapter with code samples and interface builder gif
+1. Add UIView to your xib or storyboard file, change it's class to SpinnerActivityIndicator.
+2. Add constraints (Width and height define touchable area for user interaction so it should be big enough (> 100 would be great)
+3. Customize color and isAnimating properties in Interface Builder
+4. If you need custom Spinner image or size, set `style` property from code:
 
+```
+@IBOutlet weak var spinnerActivity: SpinnerActivityIndicator!
+override func viewDidLoad() {
+    super.viewDidLoad()
+    spinnerActivity.style = .custom(size: mySize, image: mySpinnerImage)
+}
 
-Interface builder setup demo
---
-
+```
