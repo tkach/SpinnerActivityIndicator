@@ -25,7 +25,6 @@
 		B526328F1F4CB9090039AD3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B52632911F4CB9090039AD3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B52632971F4CBB720039AD3F /* SpinnerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerController.swift; sourceTree = "<group>"; };
-		B59F90FC1F4E05DF00C6D7E3 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		B5AFD3791FCF63F500F32CC8 /* SpinnerActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerActivityIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,7 +65,6 @@
 				B526328C1F4CB9090039AD3F /* Assets.xcassets */,
 				B526328E1F4CB9090039AD3F /* LaunchScreen.storyboard */,
 				B52632911F4CB9090039AD3F /* Info.plist */,
-				B59F90FC1F4E05DF00C6D7E3 /* MyPlayground.playground */,
 			);
 			path = SpinnerActivityIndicatorExample;
 			sourceTree = "<group>";
@@ -282,10 +280,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TA9RQZV3QA;
-				INFOPLIST_FILE = SpinnerActivityIndicator/Info.plist;
+				INFOPLIST_FILE = SpinnerActivityIndicatorExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = megogo.SpinnerActivityIndicator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SpinnerActivityIndicator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -296,10 +294,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TA9RQZV3QA;
-				INFOPLIST_FILE = SpinnerActivityIndicator/Info.plist;
+				INFOPLIST_FILE = SpinnerActivityIndicatorExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = megogo.SpinnerActivityIndicator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SpinnerActivityIndicator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
