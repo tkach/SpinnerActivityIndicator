@@ -51,7 +51,7 @@ public enum SpinnerStyle {
     
     private lazy var imageView: UIImageView = {
         let theBundle = Bundle(for: type(of: self))
-        let theImage = UIImage(named: "spinner", in: theBundle, compatibleWith: nil)
+        let theImage = UIImage(named: "default_small_spinner", in: theBundle, compatibleWith: nil)
         let defaultSpinnerImage = theImage?.withRenderingMode(.alwaysTemplate)
         let imageView = UIImageView(image: defaultSpinnerImage)
         imageView.tintColor = self.color

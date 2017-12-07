@@ -20,5 +20,6 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/tkach/SpinnerActivityIndicator.git", :tag => "#{s.version}" }
   s.source_files  = ["Pod/*.{swift}", "Pod/**/*.{swift}" ]
+  s.resources = ["Pod/Resources/*.{png}"]
 
 end
