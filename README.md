@@ -24,7 +24,7 @@ use_frameworks!
 platform :ios, "9.0"
 
 target 'YourTarget' do
-	pod 'SpinnerActivityIndicator'
+	pod 'SpinnerActivityIndicator', :git => "https://github.com/tkach/SpinnerActivityIndicator"
 end
 
 ```
